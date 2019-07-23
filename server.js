@@ -21,7 +21,7 @@ const app = express();
 app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // Setting up HandleBars
 
@@ -78,6 +78,7 @@ app.get("/scrape", (req, res) => {
 
     // Send a message to the client
     res.send("Scrape Complete");
+    
     });
 });
 
